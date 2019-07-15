@@ -1,0 +1,15 @@
+{
+    "name": "optimize-style-webpack-plugin",
+    "version": "0.0.1",
+    "description": "A webpack plugin for optimize style ",
+    "main": "index.js",
+    "repository": "git@github.com:edonet/optimize-style-webpack-plugin.git",
+    "author": "edonet <edonet@163.com>",
+    "license": "MIT",
+    "dependencies": {
+        "autoprefixer": "^9.6.1",
+        "cssnano": "^4.1.10",
+        "postcss": "^7.0.17",
+        "webpack-sources": "^1.3.0"
+    }
+}
