@@ -12,25 +12,8 @@
  * 加载依赖
  *****************************************
  */
-const postcss = require('postcss');
-const cssnano = require('cssnano');
-const autoprefixer = require('autoprefixer');
-const browserslist = require('browserslist');
 const { RawSource } = require('webpack-sources');
-
-
-/**
- *****************************************
- * 浏览器默认配置
- *****************************************
- */
-browserslist.defaults = [
-    'ie >= 9',
-    'Chrome >= 50',
-    'ff >= 50',
-    'iOS >= 6',
-    'Android >= 4.0'
-];
+const optimize = require('./optimize');
 
 
 /**
@@ -41,7 +24,7 @@ browserslist.defaults = [
 class OptimizeStyleWebpackPlugin {
 
     /* 初始化对象 */
-    constructor(options = {}) {
+    constructor(options) {
 
         // 定义描述
         this.descriptor = {
@@ -49,9 +32,7 @@ class OptimizeStyleWebpackPlugin {
         };
 
         // 创建处理器
-        this.processer = postcss([
-            cssnano(options.cssnano), autoprefixer(options.autoprefixer)
-        ]);
+        this.processer = optimize(options);
     }
 
     /* 执行插件 */

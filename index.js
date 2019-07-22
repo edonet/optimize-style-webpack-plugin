@@ -12,7 +12,7 @@
  * 加载依赖
  *****************************************
  */
-const OptimizeStyleWebpackPlugin = require('./optimize-style-webpack-plugin');
+const plugin = require('./plugin');
 
 
 /**
@@ -20,4 +20,4 @@ const OptimizeStyleWebpackPlugin = require('./optimize-style-webpack-plugin');
  * 抛出接口
  *****************************************
  */
-module.exports = OptimizeStyleWebpackPlugin;
+module.exports = plugin;
