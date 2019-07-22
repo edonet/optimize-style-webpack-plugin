@@ -12,8 +12,8 @@
  * 加载依赖
  *****************************************
  */
-const { RawSource } = require('webpack-sources');
-const optimize = require('./optimize');
+const optimize = require('@airb/style/optimize');
+const sources = require('webpack-sources');
 
 
 /**
@@ -64,7 +64,7 @@ class OptimizeStyleWebpackPlugin {
                         result = await this.processer.process(asset.source(), { from: key, to: key });
 
                     // 更新资源
-                    compilation.assets[key] = new RawSource(result.css);
+                    compilation.assets[key] = new sources.RawSource(result.css);
                 }
             })
         );

@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@airb/style@^0.0.102":
+  version "0.0.102"
+  resolved "https://registry.yarnpkg.com/@airb/style/-/style-0.0.102.tgz#c43c78d105c8815cae0020b9b27dce8b9a328b77"
+  integrity sha512-TEAYrewVjTMB5erDc+gqDomJWpxwFAaY6rDWTdTs4scLCtJy6D6yKrViv6wVJiQfRYcXFXNQcQ+I1Uwtfwdlzg==
+  dependencies:
+    autoprefixer "^9.6.1"
+    cssnano "^4.1.10"
+    postcss "^7.0.17"
+    qs "^6.7.0"
+
 "@types/q@^1.5.1":
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
@@ -887,6 +897,11 @@ q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
+
+qs@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
+  integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
 resolve-from@^3.0.0:
   version "3.0.0"
