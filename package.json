@@ -1,6 +1,6 @@
 {
     "name": "optimize-style-webpack-plugin",
-    "version": "0.0.101",
+    "version": "0.0.102",
     "description": "A webpack plugin for optimize style ",
     "main": "index.js",
     "repository": "git@github.com:edonet/optimize-style-webpack-plugin.git",
