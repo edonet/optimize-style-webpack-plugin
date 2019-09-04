@@ -12,6 +12,8 @@
  * 加载依赖
  *****************************************
  */
+const path = require('path');
+const match = require('@airb/style/match');
 const optimize = require('@airb/style/optimize');
 const { RawSource } = require('webpack-sources');
 
@@ -26,17 +28,44 @@ class OptimizeStyleWebpackPlugin {
     /* 初始化对象 */
     constructor(options) {
 
+        // 缓存配置
+        this.options = { ...options };
+
         // 定义描述
         this.descriptor = {
             name: 'optimize-style-webpack-plugin'
         };
 
         // 创建处理器
-        this.processer = optimize(options);
+        this.processer = optimize(this.options);
     }
 
     /* 执行插件 */
     apply(compiler) {
+        let loader = path.resolve(__dirname, './loader.js'),
+            rules = compiler.options.module.rules;
+
+        // 添加前置勾子
+        if (this.options.beforeCompile) {
+            rules.push({
+                test: match,
+                loader,
+                options: {
+                    handler: this.options.beforeCompile
+                }
+            });
+        }
+
+        // 添后置勾子
+        if (this.options.afterCompile) {
+            rules.unshift({
+                test: match,
+                loader,
+                options: {
+                    handler: this.options.afterCompile
+                }
+            });
+        }
 
         // 处理资源
         compiler.hooks.compilation.tap(this.descriptor, compilation => {
