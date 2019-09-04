@@ -44,13 +44,13 @@ class OptimizeStyleWebpackPlugin {
             // 优化片段
             compilation.hooks.optimizeChunkAssets.tapPromise(
                 this.descriptor,
-                chunks => this.process(chunks, compilation)
+                chunks => chunks && this.process(chunks, compilation)
                 );
 
             // 优化资源
             compilation.hooks.optimizeAssets.tapPromise(
                 this.descriptor,
-                assets => this.process(assets, compilation)
+                assets => assets && this.process(assets, compilation)
             );
         });
     }
